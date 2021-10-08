@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.80.0">
+        <title>Navbar Template · Bootstrap v4.6</title>
+    
+        <!--
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/navbars/">
+        -->
+        
+    
+        <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+        <style>
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+    
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+        </style>
+    
+        
+        <!-- Custom styles for this template -->
+        <link href="navbar.css" rel="stylesheet">
+      </head>
+      <body>
+  
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">SA IMD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+  <!--        <a class="nav-link" href="#">로그인 <span class="sr-only">(current)</span></a> -->
+          <a class="btn btn-primary" href="login.html" role="button">로그인</a>        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">시스템</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="SysStatus.html">시스템 상태</a>
+            <a class="dropdown-item" href="pie.html">시스템 이력</a>
+            <a class="dropdown-item" href="#">소프트웨어 상태 이력</a>
+            <a class="dropdown-item" href="#">IEC61850 연결 상태</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">시스템 설정</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="#">감시진단 설정</a>
+            <a class="dropdown-item" href="#">시스템 장치</a>
+            <a class="dropdown-item" href="#">포트설정</a>
+            <a class="dropdown-item" href="#">네트워크카드(NIC)</a>
+            <a class="dropdown-item" href="#">패킷처리 제외항목</a>
+            <a class="dropdown-item" href="#">사용자 계정관리</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GOOSE 집중관리</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="#">GOOSE 실시간 현황</a>
+            <a class="dropdown-item" href="#">GOOSE 상태</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MMS 집중관리</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="#">MMS 실시간 현황</a>
+            <a class="dropdown-item" href="#">REPORT 상태</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">네트워크 패킷 검색</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">유효성 검사</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="#">운영기준 검사</a>
+            <a class="dropdown-item" href="#">IET 검사</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">프로그램 정보</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0">
+        <input class="form-control" type="text" placeholder="Search">
+      </form>
+    </div>
+  </nav>  
+  
+  <main role="main">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Speakers (in millions)'],
+          ['사용중',  5.85],
+          ['여유',  1.66],
+          ['시스템', 0.316],
+          ['기타', 0.0791]
+        ]);
+
+      var options = {
+        legend: 'none',
+        pieSliceText: 'label',
+        title: '디스크 저장용량 상태 (전체 2,000 GB)',
+        pieStartAngle: 100,
+      };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+  
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </main>
+  </body>
+</html>
